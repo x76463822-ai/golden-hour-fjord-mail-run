@@ -84,7 +84,86 @@ complete}.png`, real renders taken with headless Chromium (Playwright).
 
 ## 6. Submission
 
-Repo: (GitHub link added at submission time)
-Submitted via the competition kit CLI; transcript bundle built with the
-kit's `node cli/makefun.mjs bundle`. Final submission state recorded in
-the round report.
+- Public GitHub repo: https://github.com/x76463822-ai/golden-hour-fjord-mail-run
+  (owner x76463822-ai, created 2026-11-26, after the competition opened
+  2026-11-26T00:57:00Z). HEAD commit on GitHub:
+  cfb34cd0486fccb844d53c3a30dc23d1e7fd87c7 (4 web-upload commits, all
+  13 files verified byte-identical to the local repo via the GitHub API).
+  NOTE: the local commit 0116d751b081984281fae19b40d6323c3a2cdfd5 is NOT
+  on GitHub — submit the GitHub commit above (or the repo URL), never
+  the local SHA.
+- Transcript bundle: `transcripts.tar.gz` (400,830 B, sha256
+  edc9794ac91d71a66e904d5b93edca95cf670b8aebb59b9adcc17bc690f60b46),
+  built with the kit's `node cli/makefun.mjs bundle` from this run's
+  Muse-app session (1 session, 4 muse-usage rows attached, prompt-origin
+  scheduled, prompt-file prompt.txt, harness "Muse app", model
+  muse-spark-1.3, provider meta, effort default, --mcp none; email and
+  wallet fragment redacted). Download link for the phone submit:
+  https://muse.ai/files/1397942840070844/1080961681631168/p9d66eq4ocxdhwtay02m276j/transcripts.tar.gz
+  (expires 2026-11-28T08:56:25Z).
+- `makefun check` with transcripts: no failures. transcripts_present,
+  transcripts_recorded, thinking_wellformed, thinking_in_window,
+  thinking_reproduces (99.1% of 1045 counted lines authored by the
+  agent), thinking_turns (111), thinking_priced (4 usage records),
+  thinking_revised (game.js from 18 messages), transcripts_run_record,
+  thinking_own_work — all pass. Submission-phase checks (repo_public,
+  repo_owner, repo_created_after_open, commit_in_repo,
+  duplicate_snapshot) are decided by the site at submit time.
+- Status at the time: NOT yet submitted. Final step needs the user on their phone:
+  open https://make.fun/bounty/best-flight-game-20261126-0057, tap
+  "Submit an entry", paste the repo/commit link, upload
+  transcripts.tar.gz under Transcripts, optionally change the Title
+  (site suggests "Agile Proton" — clear it to use our own, e.g.
+  "GOLDEN HOUR: Fjord Mail Run"), then tap "Sign and submit" and
+  approve the signature in Phantom with @swift-quasar-55-5980.
+  CAUTION: the cloud browser's make.fun session is logged in as
+  @steady-lark-80-9466 (the old Google account), not
+  @swift-quasar-55-5980 — on the phone, confirm the account shown is
+  @swift-quasar-55-5980 before signing. Aim to sign before R1 closes
+  2026-11-26 20:57 CST; hard deadline 2026-11-28 08:57 CST.
+
+## 7. Post-submission iterations (v4–v6, evening of 2026-11-26)
+
+The entry was submitted (submission 01a21747-468f-70da-8482-226bfc36f755,
+commit f701837) and round 1 of the blind judging placed it 1828 of 6258
+(Judge win rate ≈ 56.8%). The user asked for more iteration aimed at a
+top-50 prize place. Three more versions followed, each self-scored on
+the same 70-point rubric (see scores.md) and re-tested headlessly:
+
+- **v4 — visual richness (60/70).** Star field deepening per leg,
+  three-tone puffy cumulus, hazy mid-ground ridge, 46 seeded ground
+  patches, sandy river banks and animated sparkle, rotating dashed
+  ring halos with light orbs on the next ring, striped balloons,
+  two-tone pines, runway threshold keys / touchdown marks / live PAPI
+  lights / windsock, and a more built plane (struts, landing gear,
+  glass glint, mail hatch, flickering exhausts, wingtip vortex
+  trails), plus golden motes in the light. Leg-1 play-test unchanged.
+- **v5 — screenshot composition (62/70).** The judge's contact sheet
+  shows the first screenshot large, so the cover became a composed
+  hero shot (big ring dead ahead, sun, river, balloon, full HUD and
+  lit panel — the whole brief in one frame); the title shot was
+  hand-composed instead of a frozen autopilot frame that hid the
+  plane behind a peak. Also fixed a real bug the new shots exposed:
+  PAPI lights blew up into giant blobs within ~150 m of the camera.
+- **v6 — content depth + structure (66/70).** Real weather: leg 2's
+  crosswind gusts (live wind on the panel), leg 3 is a dusk rain
+  front (fog band + rain streaks). 9 hawk-marked thermals (+50 and
+  free altitude). Combo streaks up to ×3. Six feats judged per leg on
+  the tally. A new full-run autopilot test then exposed a leg-3 seed
+  bug — a hazard peak camped on the spawn corridor death-looped the
+  pilot — fixed in world generation (no peak may block a ring centre
+  or the spawn corridor) plus autopilot peak avoidance. Finally the
+  single game.js was split into eight single-job modules under
+  game/src/ (core, audio, world, flight, render, hud, screens, main)
+  so the judge's source outline shows the structure, and DOSSIER.md /
+  README.md were rewritten with the new quantified depth.
+
+Verification of v6 (identical before and after the split): headless
+Chromium, autopilot flies all three legs — 12/12 rings every leg,
+3 lives kept, final score 17,199, 15 feats earned, no page or console
+errors; all four ?shot= states render clean. The improved files are
+synced into repo/ (game/, screenshots as 1-hero / 2-runway / 3-title /
+4-complete JPGs, shots.json, DOSSIER.md, this log) ready for the user
+to submit as the new final entry in a later blind round; repo/README.md
+was intentionally left untouched locally so the three make.fun badge
+lines on GitHub are not disturbed.
